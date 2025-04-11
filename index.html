@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangman Game</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
   </head>
-  <body>
+  <body class="no-select">
+    <div class="splash">
+      <span>Start Game</span>
+    </div>
     <div class="container">
       <div class="game-info">
         <div class="game-name">Hangman</div>
-        <div class="category">
-          Word From: <span></span>
-        </div>
+        <div class="category">Word From: <span></span></div>
       </div>
-      <hr>
+      <hr />
       <div class="row">
         <div class="hangman-draw">
           <div class="the-draw">
@@ -31,7 +32,7 @@
         </div>
         <div class="letters"></div>
       </div>
-      <hr>
+      <hr />
       <div class="letters-guess"></div>
     </div>
     <audio id="success" src="audio/yay.mp3" preload="auto"></audio>
@@ -39,7 +40,7 @@
     <audio id="win" src="audio/win.mp3" preload="auto"></audio>
     <audio id="game-over" src="audio/game-over.mp3" preload="auto"></audio>
     <button id="restart-btn" style="display: none">Restart Game</button>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
-
