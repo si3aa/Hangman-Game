@@ -99,7 +99,7 @@ function handleClick(e) {
     e.target.classList.contains("letter-box") &&
     !e.target.classList.contains("clicked")
   ) {
-    canClick = false; // Disable further clicks
+    canClick = false; 
     setTimeout(() => {
       canClick = true;
     }, 1000);
