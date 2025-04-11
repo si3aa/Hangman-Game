@@ -1,6 +1,12 @@
 // Letters
 const letters = "abcdefghijklmnopqrstuvwxyz";
-
+// Sounds
+const sounds = {
+  victory: document.getElementById("win"),
+  fail: document.getElementById("fail"),
+  success: document.getElementById("success"),
+  gameOver: document.getElementById("game-over"),
+};
 // Get Array From Letters
 let lettersArray = Array.from(letters);
 
@@ -121,6 +127,37 @@ document.addEventListener("click", (e) => {
       wrongAttempts++;
       // Add Class To The Draw
       theDraw.classList.add(`wrong-${wrongAttempts}`);
+      // Play Fail Sound
+      sounds.fail.play();
+      if (wrongAttempts === 8) {
+        endGame();
+        // Play Game Over Sound
+        sounds.gameOver.play();
+
+        lettersContainer.classList.add("finished");
+      }
+    } else {
+      // Play Success Sound
+      sounds.success.play();
     }
   }
 });
+// End Game Function
+function endGame() {
+  // Create Popup Div
+  let div = document.createElement("div");
+
+  // Create Text
+  let divText = document.createTextNode(
+    `Game Over, The Word Is ${randomValueValue}`
+  );
+
+  // Append Text To Div
+  div.appendChild(divText);
+
+  // Add Class On Div
+  div.className = "popup";
+
+  // Append To The Body
+  document.body.appendChild(div);
+}
